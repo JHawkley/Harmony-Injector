@@ -1,0 +1,10 @@
+{
+  "editor.tabSize": 4,
+  "csharpfixformat.style.braces.onSameLine": false,
+  "csharpfixformat.style.newline.elseCatch": true,
+  "csharpfixformat.style.operators.onSameLine": false,
+  "csharpfixformat.style.spaces.beforeIndexerBracket": false,
+  "csharpfixformat.style.spaces.beforeParenthesis": false,
+  "csharp.referencesCodeLens.enabled": false,
+  "editor.detectIndentation": false
+}

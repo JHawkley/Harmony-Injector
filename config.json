@@ -1,0 +1,6 @@
+{
+    "config": {
+        "id": "Harmony Injector",
+        "loadorder": -9999999
+    }
+}

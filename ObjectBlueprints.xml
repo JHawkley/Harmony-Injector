@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+    <object Name="ModInjectorScript" Inherits="Widget">
+        <part Name="ModInjector"></part>
+    </object>
+</objects>

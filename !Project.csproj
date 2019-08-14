@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This project provides some amount of type-checking in VSCode.-->
+<!--It is not intended to be used to build this project.-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <LangVersion>6</LangVersion>
+    <QudPath Condition="Exists('C:\Program Files (x86)\Steam')">C:\Program Files (x86)\Steam\steamapps\common\Caves of Qud</QudPath>
+    <QudPath Condition="!Exists('C:\Program Files (x86)\Steam')">C:\Program Files\Steam\steamapps\common\Caves of Qud</QudPath>
+    <NoWarn>IDE0008,IDE0011,IDE0022,IDE0059,CS0164,CS0436</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!--Search for assemblies in CoQ and this project's root.-->
+    <AssemblySearchPaths>
+      $(AssemblySearchPaths);
+      $(ReferencePath);
+      $(ProjectPath);
+      $(QudPath)\CoQ_Data\Managed
+    </AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--References to DLLs that contain code worked on by the mod.-->
+    <Reference Include="UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule.dll" />
+    <Reference Include="Assembly-CSharp.dll" />
+    <Reference Include="NLog.dll" />
+    <Reference Include="0Harmony.dll" />
+    <!--Code files to include; limited to only C# files in the root.-->
+    <CodeFiles Include="*.cs" />
+  </ItemGroup>
+  <!--Remove the `obj` abd `bin` directories, which aren't of any use.-->
+  <Target Name="RemoveBuildDirs" AfterTargets="Compile" DependsOnTargets="Clean">
+    <RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" />
+    <RemoveDir Directories="$(ProjectDir)$(BaseOutputPath)" />
+  </Target>
+</Project>
