@@ -182,7 +182,7 @@ namespace XRL.World.Parts
 
         private static IEnumerable<string> TraceThrough(Exception exception) =>
             EnumerateExceptions(exception).Reverse()
-                .Select(ex => $"{ex.TargetSite.DeclaringType.FullName}:{ex.TargetSite.Name}");
+                .Select(ex => $"{ex.TargetSite.DeclaringType.FullName}::{ex.TargetSite.Name}");
 
         private static void ShowErrorPopup(params object[] msgParts)
         {
